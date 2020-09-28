@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Shop</title>
+    <style>
+        .add-btn {
+            width: 20px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #nav-list {
+            background-color: black;
+            display: flex;
+            justify-content: center;
+        }
+
+        .list-item {
+            padding: 20px 40px;
+
+            list-style-type: none;
+            margin: 0px 20px;
+        }
+
+        .list-item a {
+            font-size: 25px;
+            text-decoration: none;
+            color: white;
+            font-weight: 14px;
+        }
+
+        .list-item a:hover {
+            transition: 1s;
+            color: red;
+        }
+
+
+
+
+
+        /* card styling here  */
+
+        #products {
+            margin-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .card {
+            width: 26%;
+            height: 450px;
+            /* border: 3px solid blue; */
+            margin: 25px 0px;
+            box-shadow: 5px 10px 18px #888888;
+        }
+
+        .card-img {
+            width: 100%;
+            height: 60%;
+        }
+
+        .card-h {
+            text-align: center;
+            margin: 8px 0px;
+            height: 5%;
+        }
+
+        .card-btn {
+            /* border: 4px solid red; */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+            height: 16%;
+        }
+
+        .btn-c {
+            margin: 5px 0px;
+            width: 20%;
+            /* font-size: 20px; */
+            /* height: 50%; */
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <nav>
+        <ul id="nav-list">
+            <li class="list-item"><a href="/">Online Shop</a></li>
+            <li class="list-item"><a href="/cart">Cart</a></li>
+            <li class="list-item"><a href="/admin">Admin</a></li>
+        </ul>
+    </nav>
+
+
+
+    <section id="products">
+
+        <% for (let product of prod) {  %>
+
+        <div class="card">
+            <h1 class="card-h"><%=  product.title  %></h1>
+            <img class="card-img" src="<%= product.imgUrl %>" alt="">
+            <h1 class="card-h">Price - <%= product.price %></h1>
+            <div class="card-btn">
+                <!-- <button class="btn-c">Add To Cart</button> -->
+
+                <form action="/cart" method="post">
+                    <button class="" type="submit">Add to Cart</button>
+                    <input type="hidden" name="productId" value="<%= product._id %>">
+                </form>
+                <button class="btn-c">Detail</button>
+            </div>
+        </div>
+
+        <% } %>
+
+
+    </section>
+</body>
+
+</html>

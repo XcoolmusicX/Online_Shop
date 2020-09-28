@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Add-Product</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        #nav-list {
+            background-color: black;
+            display: flex;
+            justify-content: center;
+        }
+
+        .list-item {
+            padding: 20px 40px;
+
+            list-style-type: none;
+            margin: 0px 20px;
+        }
+
+        .list-item a {
+            font-size: 25px;
+            text-decoration: none;
+            color: white;
+            font-weight: 14px;
+        }
+
+        .list-item a:hover {
+            transition: 1s;
+            color: red;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 40%;
+            margin: auto;
+            height: 400px;
+            background-color: cornsilk;
+        }
+
+
+        .from-group {
+            /* border: 5px solid red; */
+            margin: 8px 0px;
+            text-align: center;
+            padding: 15px 5px;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .label {
+            width: 20%;
+            /* border: 2px solid blue; */
+            padding: 5px 0px;
+        }
+
+        label {
+            font-size: 20px;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+        }
+
+        .from-group input {
+            width: 60%;
+            background-color: gray;
+            color: black;
+            font-size: 25px;
+        }
+
+
+        .from-group .btn {
+            width: 150px;
+            background-color: blue;
+            padding: 5px 2px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <nav>
+        <ul id="nav-list">
+            <li class="list-item"><a href="/">Online Shop</a></li>
+            <li class="list-item"><a href="/admin">Admin</a></li>
+        </ul>
+    </nav>
+
+
+    <form action="add-product" method="POST" >
+
+        <div class="from-group">
+            <div class="label">
+                <label for="title">Title</label>
+            </div>
+            <input type="text" id="title" name="title" required>
+        </div>
+
+
+
+        <div class="from-group">
+            <label for="image">Image</label>
+            <input type="text" name="imageUrl" id="image">
+        </div>
+
+
+        <div class="from-group">
+            <div class="label">
+                <label for="price">Price</label>
+            </div>
+            <input type="number" id="price" name="price" required>
+        </div>
+
+        <div class="from-group">
+            <input class="btn" type="submit" value="submit">
+        </div>
+
+    </form>
+
+
+</body>
+
+</html>
