@@ -40,7 +40,7 @@ const adminRoutes = require('./routes/admin.js')
 
 app.use((req, res, next) => {
 
-    User.findById('5f6f5b1fed4a651ef0b35a92')
+    User.findById('5f6b442026fcb0038c864ed3')
         .then(user => {
             req.user = user;
             next();
